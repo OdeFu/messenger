@@ -10,13 +10,13 @@ Package.describe({
 
 Package.onUse(function (api) {
 	api.versionsFrom("1.1");
-	api.use(["grigio:babel", "erasaur:meteor-lodash"]);
+	api.use(["grigio:babel@0.0.14", "erasaur:meteor-lodash@3.6.0"]);
 	api.addFiles("messenger.es6.js");
 	api.export("Messenger");
 });
 
 Package.onTest(function (api) {
-	api.use(["tinytest", "grigio:babel", "erasaur:meteor-lodash"]);
+	api.use(["tinytest", "grigio:babel@0.0.14", "erasaur:meteor-lodash@3.6.0"]);
 	api.addFiles("messenger.es6.js");
 	api.addFiles("messenger-tests.js");
 });
