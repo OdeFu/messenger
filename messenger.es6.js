@@ -7,6 +7,8 @@ Messenger = {
 	 */
 	addListener: function (eventName, callback) {
 		"use strict";
+		check(eventName, String);
+		check(callback, Function);
 
 		const list = _getListenerList(eventName);
 		list.push(callback);
@@ -20,6 +22,8 @@ Messenger = {
 	 */
 	removeListener: function (eventName, callback) {
 		"use strict";
+		check(eventName, String);
+		check(callback, Function);
 
 		const list = _getListenerList(eventName);
 		_.remove(list, function (listener) {
@@ -39,6 +43,7 @@ Messenger = {
 	 */
 	broadcast: function (eventName, ...params) {
 		"use strict";
+		check(eventName, String);
 
 		const list = _getListenerList(eventName);
 		_.each(list, function (listener) {
